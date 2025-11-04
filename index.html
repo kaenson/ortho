@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orthopaedic Reference</title>
+    <style>
+        /* CSS Variables for Easy Customization */
+        :root {
+            --medical-blue: #007bff; /* Primary Accent Color */
+            --sterile-gray: rgba(33, 37, 41, 0.85); /* Semi-transparent Overlay */
+            --text-light: #ffffff;
+            --font-stack: 'Roboto', 'Lato', sans-serif;
+        }
+
+        /* Basic Reset and Typography */
+        body {
+            font-family: var(--font-stack);
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: var(--text-light);
+            text-align: center;
+            overflow: hidden; /* Prevent body scroll */
+        }
+
+        /* Background Image Setup */
+        .background-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('background-mako-theatre.jpg'); /* Placeholder: Replace this file */
+            background-size: cover;
+            background-position: center;
+            z-index: -2; /* Below the overlay */
+        }
+
+        /* Semi-Transparent Overlay */
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: var(--sterile-gray);
+            z-index: -1; /* Above the background */
+        }
+
+        /* Content Centering and Structure */
+        .content-container {
+            position: relative;
+            z-index: 1;
+            max-width: 90%;
+            padding: 20px;
+        }
+
+        /* Header Styling */
+        h1 {
+            font-size: 3.5em;
+            margin-bottom: 5px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .tagline {
+            font-size: 1.2em;
+            margin-bottom: 40px;
+            font-weight: 300;
+        }
+
+        /* Icon Navigation Container */
+        .icon-nav {
+            display: flex;
+            flex-direction: row; /* Default to horizontal */
+            justify-content: center;
+            gap: 40px; /* Space between icons on desktop */
+            margin-top: 30px;
+        }
+
+        /* Individual Icon Link Styling */
+        .icon-link {
+            text-decoration: none;
+            color: var(--text-light);
+            transition: transform 0.3s ease, color 0.3s ease;
+            display: block;
+            max-width: 150px;
+        }
+
+        .icon-link:hover {
+            color: var(--medical-blue);
+            transform: translateY(-5px); /* Subtle lift on hover */
+        }
+
+        .icon-link img {
+            width: 80px; /* Icon size */
+            height: 80px;
+            margin-bottom: 15px;
+            filter: invert(100%); /* Make line-art white against dark overlay */
+            transition: filter 0.3s ease;
+        }
+
+        .icon-link:hover img {
+            filter: invert(60%) sepia(1) saturate(5) hue-rotate(180deg); /* Change to blue on hover */
+        }
+
+        .icon-link span {
+            display: block;
+            font-size: 1.1em;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Mobile Responsiveness (Stacked Icons) */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5em;
+            }
+            .tagline {
+                font-size: 1em;
+            }
+            .icon-nav {
+                flex-direction: column; /* Stack icons vertically on small screens */
+                gap: 30px; /* Space between stacked icons */
+            }
+            .icon-link {
+                max-width: 100%;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="background-container"></div>
+    <div class="overlay"></div>
+
+    <div class="content-container">
+        <h1>Orthopaedic Reference</h1>
+        <p class="tagline">A visual guide from the on call registrar</p>
+
+        <div class="icon-nav">
+            
+            <a href="splints.html" class="icon-link">
+                <img src="icon-mallet.png" alt="Mallet Icon"> <span>Splints</span>
+            </a>
+
+            <a href="rehabilitation.html" class="icon-link">
+                <img src="icon-bristow.png" alt="Bristow Icon"> <span>Rehabilitation</span>
+            </a>
+
+            <a href="tips.html" class="icon-link">
+                <img src="icon-screw.png" alt="Screw Icon"> <span>Tips</span>
+            </a>
+
+        </div>
+    </div>
+
+</body>
+</html>
